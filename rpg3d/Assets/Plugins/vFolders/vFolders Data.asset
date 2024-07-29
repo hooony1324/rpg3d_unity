@@ -1,0 +1,149 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adb9c12a8c6c949f7af83a3d238359d0, type: 3}
+  m_Name: vFolders Data
+  m_EditorClassIdentifier: 
+  folderDatas_byGuid:
+    keys:
+    - 487ca4143b165e74596321ea3d5c994b
+    - b4e0eba597943e3419625af56f4f4431
+    - 04d85e72472e27a40b01acdaf6da2ccd
+    - a1f16bb591f6e244dbb5e002c662fcbf
+    - c13dabcc4ff280843be4ccddaa13889e
+    - 6b6f0176d0f5768458442b83482f33cb
+    - 8381cb69c8047b04f9213462dd8fd35d
+    - 76fbb4fb27bd5b2438353c383fafcab7
+    - ca3a1b960949bff4fbd9b4ebb8592fd5
+    - 00dd2c6a86aadde4cbeeb62b59bc3cc2
+    - 8a8f9f1f3f0aade46977ec9beda95353
+    - b6c0e26e7e23de844bbd87bf01a77b9d
+    - cadf2eb6631da904093e493f4dd466ed
+    - 4fc393e325e46804f9c5ff272ef80ccc
+    - 08f9bbef66a6b2048b78b80750828d9d
+    - b55bfa53d6685ff42ab43649d24760f3
+    - f17e6481f3dbf8f4690575a3ddbaafbd
+    - f441584179fc119468429148c50f0911
+    - 3c29ca8cfc92a5c47a91aba46f1b9733
+    - 948b7ec07ca38ed499d702cfd8dfc73c
+    - 3f7acb95cf338514db75ad39a76b3d8f
+    - e0d67f72076c3d84a8b8042087a2f01c
+    - 24d005e5ef5f7be41a5520458943231c
+    - d8106da6f23144548abe9f9a7d8ec32d
+    - b8e273b972bca164f98ca7b19eaac3f7
+    - b2b2d68e54f5d4540b99e90b3fceffce
+    - 50124411819d35141ab80e182bf8ad88
+    - 3c4c65fb3a47337458e86d7ce8106242
+    - 0d0f1fbcbaa114043bbdb2bacf506598
+    - f73c94afdbcfd3d479d7bcd27b795462
+    - c65d86c242b93f94bacc5137624174ad
+    - 399a02a04497b4e4981572d2ee2d285c
+    - 882ccc0398e541e4e86bea33fafd0ade
+    - 241c7ca86afba214cb082440683207c8
+    - d086ba70affaced4ba93a6862240676c
+    - f77afa548102ebe4d9acbf343aee0de6
+    - 6968d9efe8f7c704b86bd3cb983dc686
+    - 9f2cbf5dfccc02b4d96accde6687e8b0
+    - c51b11e5e00c05346be205ade361b0a0
+    - f1d397ee938afb844ac0fbd54a1f5f53
+    - 82684b14797df01409a6e7113a587b05
+    - eed2392847434fc409beb359cabeaeba
+    - 5f3b37028ace47a49add81719371e10c
+    - 05ae481a16cdee9459f7b21c5571b886
+    values:
+    - colorIndex: 1
+      iconNameOrGuid: 
+    - colorIndex: 1
+      iconNameOrGuid: 
+    - colorIndex: 1
+      iconNameOrGuid: 
+    - colorIndex: 2
+      iconNameOrGuid: 
+    - colorIndex: 4
+      iconNameOrGuid: 
+    - colorIndex: 2
+      iconNameOrGuid: 
+    - colorIndex: 3
+      iconNameOrGuid: 
+    - colorIndex: 9
+      iconNameOrGuid: 
+    - colorIndex: 1
+      iconNameOrGuid: 
+    - colorIndex: 8
+      iconNameOrGuid: 
+    - colorIndex: 8
+      iconNameOrGuid: 
+    - colorIndex: 8
+      iconNameOrGuid: 
+    - colorIndex: 4
+      iconNameOrGuid: 
+    - colorIndex: 3
+      iconNameOrGuid: 
+    - colorIndex: 4
+      iconNameOrGuid: 
+    - colorIndex: 8
+      iconNameOrGuid: 
+    - colorIndex: 10
+      iconNameOrGuid: 
+    - colorIndex: 4
+      iconNameOrGuid: 
+    - colorIndex: 8
+      iconNameOrGuid: 
+    - colorIndex: 4
+      iconNameOrGuid: 
+    - colorIndex: 4
+      iconNameOrGuid: 
+    - colorIndex: 4
+      iconNameOrGuid: 
+    - colorIndex: 2
+      iconNameOrGuid: 
+    - colorIndex: 3
+      iconNameOrGuid: 
+    - colorIndex: 3
+      iconNameOrGuid: 
+    - colorIndex: 3
+      iconNameOrGuid: 
+    - colorIndex: 3
+      iconNameOrGuid: 
+    - colorIndex: 3
+      iconNameOrGuid: 
+    - colorIndex: 3
+      iconNameOrGuid: 
+    - colorIndex: 3
+      iconNameOrGuid: 
+    - colorIndex: 3
+      iconNameOrGuid: 
+    - colorIndex: 2
+      iconNameOrGuid: 
+    - colorIndex: 2
+      iconNameOrGuid: 
+    - colorIndex: 4
+      iconNameOrGuid: 
+    - colorIndex: 3
+      iconNameOrGuid: 
+    - colorIndex: 3
+      iconNameOrGuid: 
+    - colorIndex: 3
+      iconNameOrGuid: 
+    - colorIndex: 1
+      iconNameOrGuid: 
+    - colorIndex: 8
+      iconNameOrGuid: Prefab Icon
+    - colorIndex: 8
+      iconNameOrGuid: SceneAsset Icon
+    - colorIndex: 8
+      iconNameOrGuid: cs Script Icon
+    - colorIndex: 2
+      iconNameOrGuid: ScriptableObject Icon
+    - colorIndex: 2
+      iconNameOrGuid: ScriptableObject Icon
+    - colorIndex: 2
+      iconNameOrGuid: ScriptableObject Icon
