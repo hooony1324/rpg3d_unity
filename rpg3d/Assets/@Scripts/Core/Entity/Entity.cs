@@ -32,6 +32,11 @@ public class Entity : MonoBehaviour
     public Animator Animator { get; private set; }
     public Stats Stats { get; private set; }
     public bool IsDead => Stats.HPStat != null && Mathf.Approximately(Stats.HPStat.DefaultValue, 0f);
+    public EntityMovement Movement { get; private set; }
+    public Entity Target { get; set; }
+
+    public event TakeDamageHandler onTakeDamage;
+    public event DeadHandler onDead;
 
     private void Awake()
     {
@@ -39,6 +44,32 @@ public class Entity : MonoBehaviour
 
         Stats = GetComponent<Stats>();
         Stats.Setup(this);
+
+        Movement = GetComponent<EntityMovement>();
+        Movement?.Setup(this);
+    }
+
+    public void TakeDamage(Entity instigator, object causer, float damage)
+    {
+        if (IsDead)
+            return;
+
+        float prevValue = Stats.HPStat.DefaultValue;
+        Stats.HPStat.DefaultValue -= damage;
+
+        onTakeDamage?.Invoke(this, instigator, causer, damage);
+
+        if (Mathf.Approximately(Stats.HPStat.DefaultValue, 0f))
+            OnDead();
+    }
+    private void OnDead()
+    {
+        if (Movement)
+            Movement.enabled = false;
+
+        //SkillSystem.CancelAll(true);
+
+        onDead?.Invoke(this);
     }
 
     private Transform GetTransformSocket(Transform root, string socketName)
