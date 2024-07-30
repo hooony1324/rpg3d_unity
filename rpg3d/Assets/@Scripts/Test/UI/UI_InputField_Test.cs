@@ -23,6 +23,8 @@ public class UI_InputField_Test : UI_Base
     {
         if (int.TryParse(value, out int result))
             Stat_Test.Instance.TakeDamage(result);
+
+        
     }
 
 
