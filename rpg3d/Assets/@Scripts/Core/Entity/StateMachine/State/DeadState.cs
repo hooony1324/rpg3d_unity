@@ -2,17 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeadState : MonoBehaviour
+public class DeadState : State<Entity>
 {
-    // Start is called before the first frame update
-    void Start()
+    private PlayerController playerController;
+    private EntityMovement movement;
+    protected override void Setup()
     {
-        
+        playerController = Entity.GetComponent<PlayerController>();
+        movement = Entity.GetComponent<EntityMovement>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Enter()
     {
-        
+        if (playerController)
+            playerController.enabled = false;
+
+        if (movement)
+            movement.enabled = false;
+    }
+
+    public override void Exit()
+    {
+        if (playerController)
+            playerController.enabled = true;
+
+        if (movement)
+            movement.enabled = true;
     }
 }

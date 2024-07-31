@@ -2,17 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RollingState : MonoBehaviour
+public class RollingState : State<Entity>
 {
-    // Start is called before the first frame update
-    void Start()
+    private PlayerController playerController;
+
+    protected override void Setup()
     {
-        
+        playerController = Entity.GetComponent<PlayerController>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void Enter()
     {
-        
+        if (playerController)
+            playerController.enabled = false;
+    }
+
+    public override void Exit()
+    {
+        if (playerController)
+            playerController.enabled = true;
     }
 }

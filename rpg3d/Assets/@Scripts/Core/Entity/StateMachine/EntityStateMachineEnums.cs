@@ -1,18 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class EntityStateMachineEnums : MonoBehaviour
+public enum EntityStateCommand
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    ToDefaultState,
+    ToCastingSkillState,
+    ToChargingSkillState,
+    ToInSkillPrecedingActionState,
+    ToInSkillActionState,
+    ToStunningState,
+    ToSleepingState
 }
+
+public enum EntityStateMessage { UsingSkill }

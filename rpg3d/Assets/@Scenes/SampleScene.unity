@@ -2800,6 +2800,7 @@ GameObject:
   - component: {fileID: 5866666020299888889}
   - component: {fileID: 5866666020299888893}
   - component: {fileID: 5866666020299888894}
+  - component: {fileID: 5866666020299888895}
   m_Layer: 0
   m_Name: xbot-Enemy
   m_TagString: Untagged
@@ -2824,6 +2825,7 @@ GameObject:
   - component: {fileID: 5866666019998604440}
   - component: {fileID: 5866666019998604442}
   - component: {fileID: 5866666019998604441}
+  - component: {fileID: 5866666019998604443}
   m_Layer: 0
   m_Name: Paladin J Nordstrom
   m_TagString: Player
@@ -2847,6 +2849,7 @@ GameObject:
   - component: {fileID: 5866666021534240060}
   - component: {fileID: 5866666021534240064}
   - component: {fileID: 5866666021534240065}
+  - component: {fileID: 5866666021534240066}
   m_Layer: 0
   m_Name: xbot-Friend
   m_TagString: Untagged
@@ -7064,6 +7067,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 786011b47f577a348a4369618b5c3876, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5866666019998604443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147847175251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23bf6515b552a9c438bea1e06bae99e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &5866666020299888888
 Animator:
   serializedVersion: 7
@@ -7202,6 +7217,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeedStat: {fileID: 11400000, guid: 5bbd1a5a95479cf41bea8480c0a4d1aa, type: 2}
   rollTime: 0.5
+--- !u!114 &5866666020299888895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147545659448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23bf6515b552a9c438bea1e06bae99e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &5866666021534240059
 Animator:
   serializedVersion: 7
@@ -7340,6 +7367,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeedStat: {fileID: 11400000, guid: 5bbd1a5a95479cf41bea8480c0a4d1aa, type: 2}
   rollTime: 0.5
+--- !u!114 &5866666021534240066
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132149534854651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23bf6515b552a9c438bea1e06bae99e9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5901452233650507777
 Transform:
   m_ObjectHideFlags: 0

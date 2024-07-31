@@ -35,6 +35,7 @@ public class Entity : MonoBehaviour
     public EntityMovement Movement { get; private set; }
     public Entity Target { get; set; }
 
+    public MonoStateMachine<Entity> StateMachine { get; private set; }
     public event TakeDamageHandler onTakeDamage;
     public event DeadHandler onDead;
 
@@ -47,6 +48,9 @@ public class Entity : MonoBehaviour
 
         Movement = GetComponent<EntityMovement>();
         Movement?.Setup(this);
+
+        StateMachine = GetComponent<MonoStateMachine<Entity>>();
+        StateMachine?.Setup(this);
     }
 
     public void TakeDamage(Entity instigator, object causer, float damage)

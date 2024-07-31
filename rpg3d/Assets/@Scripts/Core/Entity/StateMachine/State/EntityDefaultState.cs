@@ -1,18 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class EntityDefaultState : MonoBehaviour
+public class EntityDefaultState : State<Entity>
 {
-    // Start is called before the first frame update
-    void Start()
+    public override bool OnReceiveMessage(int message, object data)
     {
-        
-    }
+        if ((EntityStateMessage)message != EntityStateMessage.UsingSkill)
+            return false;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        //var tupleData = ((Skill skill, AnimatorParameter animatorParameter))data;
+        //Entity.Animator?.SetTrigger(tupleData.Item2.Hash);
+
+        return true;
     }
 }

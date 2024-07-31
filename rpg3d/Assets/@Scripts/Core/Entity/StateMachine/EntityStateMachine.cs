@@ -2,17 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EntityStateMachine : MonoBehaviour
+public class EntityStateMachine : MonoStateMachine<Entity>
 {
-    // Start is called before the first frame update
-    void Start()
+    protected override void AddStates()
     {
-        
+        AddState<EntityDefaultState>();
+        AddState<DeadState>();
+        AddState<RollingState>();
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void MakeTransitions()
     {
-        
+        // Default State
+        MakeTransition<EntityDefaultState, RollingState>(state => Owner.Movement?.IsRolling ?? false);
+
+        // Rolling State
+        MakeTransition<RollingState, EntityDefaultState>(state => !Owner.Movement.IsRolling);
+
+        // Dead State
+        MakeAnyTransition<DeadState>(state => Owner.IsDead);
+        MakeTransition<DeadState, EntityDefaultState>(state => !Owner.IsDead);
     }
+
 }
