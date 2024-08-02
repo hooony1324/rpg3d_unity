@@ -467,7 +467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ApplyAfter: 2
   m_ChannelMask: 1
-  m_Gain: 1
+  m_Gain: 0.5
   m_Use2DDistance: 0
   m_UseCameraSpace: 1
   m_ReactionSettings:
@@ -2807,7 +2807,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &919132147847175251
 GameObject:
   m_ObjectHideFlags: 0
@@ -2826,6 +2826,7 @@ GameObject:
   - component: {fileID: 5866666019998604442}
   - component: {fileID: 5866666019998604441}
   - component: {fileID: 5866666019998604443}
+  - component: {fileID: 5866666019998604444}
   m_Layer: 0
   m_Name: Paladin J Nordstrom
   m_TagString: Player
@@ -2856,7 +2857,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1031632034363944220
 Transform:
   m_ObjectHideFlags: 0
@@ -7018,8 +7019,8 @@ MonoBehaviour:
     isUseOverride: 0
     overrideDefaultValue: 0
   - stat: {fileID: 11400000, guid: fb2efd1b0a30b7648962db72d54af62e, type: 2}
-    isUseOverride: 0
-    overrideDefaultValue: 0
+    isUseOverride: 1
+    overrideDefaultValue: 4
   - stat: {fileID: 11400000, guid: 9317b3224ff78994aa217852bb60d9f5, type: 2}
     isUseOverride: 0
     overrideDefaultValue: 0
@@ -7079,6 +7080,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23bf6515b552a9c438bea1e06bae99e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &5866666019998604444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132147847175251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4374386f1f5ad6b45900088728cf48af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testEffect: {fileID: 11400000, guid: 13f6b0893cc586d46994178ec968a72d, type: 2}
+  effectLevel: 1
 --- !u!95 &5866666020299888888
 Animator:
   serializedVersion: 7

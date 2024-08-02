@@ -3,6 +3,7 @@ using Sirenix.OdinInspector.Editor;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
+using Unity.VisualScripting.YamlDotNet.Serialization.NodeTypeResolvers;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
@@ -138,5 +139,91 @@ public class IdentifiedObjectEditor : Editor
         }
 
         serializedObject.ApplyModifiedProperties();
+    }
+
+    // FoldOut, Data의 Level과 Data의 삭제를 위한 X버튼 그림
+    protected bool DrawRemovableLevelFoldout(SerializedProperty datasProperty, SerializedProperty targetProperty, int targetIndex, bool isDrawRemoveButton)
+    {
+        bool isRemoveButtonClicked = false;
+
+        EditorGUILayout.BeginHorizontal();
+        {
+            GUI.color = Color.green;
+            var level = targetProperty.FindPropertyRelative("level").intValue;
+            targetProperty.isExpanded = EditorGUILayout.Foldout(targetProperty.isExpanded, $"Level {level}");
+            GUI.color = Color.white;
+
+            if (isDrawRemoveButton)
+            {
+                GUI.color = Color.red;
+                if (GUILayout.Button("x", EditorStyles.miniButton, GUILayout.Width(20)))
+                {
+                    isRemoveButtonClicked = true;
+                    datasProperty.DeleteArrayElementAtIndex(targetIndex);
+                }
+                GUI.color = Color.white;
+            }
+        }
+        EditorGUILayout.EndHorizontal();
+
+        return isRemoveButtonClicked;
+    }
+
+    protected void DrawSortedPropertiesByLevel(SerializedProperty datasProperty, SerializedProperty levelProperty, int index, bool isEditable)
+    {
+        if (!isEditable)
+        {
+            GUI.enabled = false;
+            EditorGUILayout.PropertyField(levelProperty);
+            GUI.enabled = true;
+        }
+        else
+        {
+            EditorGUI.BeginChangeCheck();
+            var prevValue = levelProperty.intValue;
+            EditorGUILayout.DelayedIntField(levelProperty);
+
+            // level입력 후 Enter => level수정하면
+            if (EditorGUI.EndChangeCheck())
+            {
+                if (levelProperty.intValue <= 1)
+                    levelProperty.intValue = prevValue;
+                else
+                {
+                    for (int i = 0; i < datasProperty.arraySize; i++)
+                    {
+                        if (index == i)
+                            continue;
+
+                        var element = datasProperty.GetArrayElementAtIndex(i);
+                        // 같은 level가진 data이미 있으면 수정 전level로 되돌림
+                        if (element.FindPropertyRelative("level").intValue == levelProperty.intValue)
+                        {
+                            levelProperty.intValue = prevValue;
+                            break;
+                        }
+                    }
+
+                    // 정상적으로 level수정됨, 오름차순 정렬
+                    if (levelProperty.intValue != prevValue)
+                    {
+                        for (int moveIndex = 1; moveIndex < datasProperty.arraySize; moveIndex++)
+                        {
+                            if (moveIndex == index)
+                                continue;
+
+                            // 삽입
+                            // ex. 1 2 4 5 (3) => 1 2 (3) 4 5
+                            var element = datasProperty.GetArrayElementAtIndex(moveIndex).FindPropertyRelative("level");
+                            if (levelProperty.intValue < element.intValue || moveIndex == (datasProperty.arraySize - 1))
+                            {
+                                datasProperty.MoveArrayElement(index, moveIndex);
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }

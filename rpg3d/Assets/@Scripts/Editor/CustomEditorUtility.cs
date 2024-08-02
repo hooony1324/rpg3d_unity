@@ -76,4 +76,43 @@ public static class CustomEditorUtility
         // height가 1이라면 이전 GUI 바로 아래에 크기가 1인 Box, 즉 Line이 그려지게됨
         EditorGUI.DrawRect(lastRect, Color.gray);
     }
+
+    public static void DrawEnumToolbar(SerializedProperty enumProperty)
+    {
+        EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.PrefixLabel(enumProperty.displayName);
+        enumProperty.enumValueIndex = GUILayout.Toolbar(enumProperty.enumValueIndex, enumProperty.enumDisplayNames);
+        EditorGUILayout.EndHorizontal();
+    }
+
+    // 얕은복사 방지
+    // Monobehaviour, ScriptableObject 멤버로 SerializeReference -> 깊은복사
+    // Class, Stuct 멤버로 SerializeReference -> 얕은복사
+    public static void DeepCopySerializeReference(SerializedProperty property)
+    {
+        // managedRefernceValue는 SerializeReference Attribute를 적용한 변수
+        // Editor에서의 enum Selector부분
+        if (property.managedReferenceValue == null)
+            return;
+
+        property.managedReferenceValue = (property.managedReferenceValue as ICloneable).Clone();
+    }
+
+    public static void DeepCopySerializeReferenceArray(SerializedProperty property, string fieldName = "")
+    {
+        for (int i = 0; i < property.arraySize; i++)
+        {
+            var elementProperty = property.GetArrayElementAtIndex(i);
+
+            // Element가 일반 class나 struct라서 Element내부에 SerializeReference변수 있을 수 있음
+            // fieldName이 Empty가 아니라면 Element에서 fieldName변수 정보를 찾아옴
+            if (!string.IsNullOrEmpty(fieldName))
+                elementProperty = elementProperty.FindPropertyRelative(fieldName);
+
+            if (elementProperty.managedReferenceValue == null)
+                continue;
+
+            elementProperty.managedReferenceValue = (elementProperty.managedReferenceValue as ICloneable).Clone();
+        }
+    }
 }

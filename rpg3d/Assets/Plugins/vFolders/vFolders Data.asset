@@ -58,6 +58,9 @@ MonoBehaviour:
     - eed2392847434fc409beb359cabeaeba
     - 5f3b37028ace47a49add81719371e10c
     - 05ae481a16cdee9459f7b21c5571b886
+    - 942b3e82195751d4885f8d51a5d7b720
+    - 62d7d0172a8dd0840be460cac3d54fc8
+    - 384d06543476e4d4ea0aae1b57b7e3f7
     values:
     - colorIndex: 1
       iconNameOrGuid: 
@@ -141,6 +144,12 @@ MonoBehaviour:
       iconNameOrGuid: SceneAsset Icon
     - colorIndex: 8
       iconNameOrGuid: cs Script Icon
+    - colorIndex: 2
+      iconNameOrGuid: ScriptableObject Icon
+    - colorIndex: 2
+      iconNameOrGuid: ScriptableObject Icon
+    - colorIndex: 2
+      iconNameOrGuid: ScriptableObject Icon
     - colorIndex: 2
       iconNameOrGuid: ScriptableObject Icon
     - colorIndex: 2

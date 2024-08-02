@@ -31,7 +31,8 @@ public class Entity : MonoBehaviour
 
     public Animator Animator { get; private set; }
     public Stats Stats { get; private set; }
-    public bool IsDead => Stats.HPStat != null && Mathf.Approximately(Stats.HPStat.DefaultValue, 0f);
+    //public bool IsDead => Stats.HPStat != null && Mathf.Approximately(Stats.HPStat.DefaultValue, 0f);
+    public bool IsDead => TestGetDead();
     public EntityMovement Movement { get; private set; }
     public Entity Target { get; set; }
 
@@ -39,6 +40,11 @@ public class Entity : MonoBehaviour
     public event TakeDamageHandler onTakeDamage;
     public event DeadHandler onDead;
 
+    bool TestGetDead()
+    {
+        bool result = Stats.HPStat != null && Mathf.Approximately(Stats.HPStat.DefaultValue, 0f);
+        return result;
+    }
     private void Awake()
     {
         Animator = GetComponent<Animator>();

@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89b9e73eca010bc4083ce9ea5c589bf6, type: 3}
+  m_Name: EFFECT_Test
+  m_EditorClassIdentifier: 
+  categories: []
+  icon: {fileID: 0}
+  id: 0
+  codeName: Test
+  displayName: tttt
+  description: "\uC9C0\uC18D: $[duration.0], \uC801\uC6A9 \uD69F\uC218: $[applyCount.0],
+    \uC801\uC6A9 \uC8FC\uAE30: $[applyCycle.0], \uC801\uC6A9 \uAC12: $[value.0],
+    3 Stack\uAC12: $[value.0.3.0], 5 Stack \uAC12: $[value.0.5.0]"
+  type: 0
+  isAllowDuplicate: 1
+  removeDuplicateTargetOption: 0
+  isShowInUI: 0
+  isAllowLevelExceedDatas: 0
+  maxLevel: 1
+  effectDatas:
+  - level: 1
+    maxStack: 5
+    stackActions:
+    - stack: 3
+      isReleaseOnNextApply: 1
+      isApplyOnceInLifeTime: 0
+      action:
+        rid: 8510794668220874760
+    - stack: 5
+      isReleaseOnNextApply: 1
+      isApplyOnceInLifeTime: 0
+      action:
+        rid: 8510794668220874761
+    action:
+      rid: 8510794668220874759
+    runningFinishOption: 0
+    isApplyAllWhenDurationExpires: 0
+    duration:
+      defaultValue: 2
+      scaleStat: {fileID: 11400000, guid: a1232cc291d4b744c98862ca3c0a691d, type: 2}
+    applyCount: 2
+    applyCycle: 0
+    customActions:
+    - rid: 8510794668220874762
+  references:
+    version: 2
+    RefIds:
+    - rid: 8510794668220874759
+      type: {class: TestEffectAction, ns: Test, asm: Assembly-CSharp}
+      data:
+        value: 10
+    - rid: 8510794668220874760
+      type: {class: TestEffectAction, ns: Test, asm: Assembly-CSharp}
+      data:
+        value: 25
+    - rid: 8510794668220874761
+      type: {class: TestEffectAction, ns: Test, asm: Assembly-CSharp}
+      data:
+        value: 50
+    - rid: 8510794668220874762
+      type: {class: CameraShakeAction, ns: , asm: Assembly-CSharp}
+      data: 
